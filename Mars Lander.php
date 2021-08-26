@@ -1,8 +1,5 @@
 <?php
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
+
 
 // $surfaceN: the number of points used to draw the surface of Mars.
 fscanf(STDIN, "%d", $surfaceN);
@@ -23,18 +20,12 @@ while (TRUE)
     // $power: the thrust power (0 to 4).
     fscanf(STDIN, "%d %d %d %d %d %d %d", $X, $Y, $hSpeed, $vSpeed, $fuel, $rotate, $power);
 
-    // Write an action using echo(). DON'T FORGET THE TRAILING \n
-    // To debug: error_log(var_export($var, true)); (equivalent to var_dump)
-
-
-    // 2 integers: rotate power. rotate is the desired rotation angle (should be 0 for level 1), power is the desired thrust power (0 to 4).
+    
     if ($vSpeed <= -40) {
         $power = 4;
     } else {
         $power = 0;
     }
 
-    
     echo("0 $power\n");
 }
-?>

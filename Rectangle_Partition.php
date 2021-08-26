@@ -34,8 +34,10 @@ for ($i = 0; $i < $countY; $i++)
     }
 }
 
-
+// On défini la variable égale au nombre de carrés présents : 
 $nbCarre = 0;
+
+// On comparr chaque valeur des mesures sur la longueur avec chacune des valeurs des mesures sur la hauteur : 
 for ($i = 0; $i < count($inputsX); $i++){
     
     for($j = 0; $j < count($inputsY); $j++){
@@ -46,5 +48,5 @@ for ($i = 0; $i < count($inputsX); $i++){
     }
 }
 
+// On renvoie le nombre de carrés : 
 echo("$nbCarre\n");
-?>

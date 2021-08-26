@@ -70,4 +70,3 @@ for ($i = 0; $i < count($extensionArray); $i++){
     // On retourne le résultat (type MIME ou "UNKNOWN")        
     echo("$resultat\n");
 }
-?>

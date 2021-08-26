@@ -35,4 +35,3 @@ foreach (str_split($sentence) as $char) {
 
 // Assemblage de toutes les lignes avec le caractère passage à la ligne
 echo implode("\n", $rows) . "\n";
-?>
