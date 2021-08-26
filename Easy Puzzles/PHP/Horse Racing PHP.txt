@@ -1,0 +1,38 @@
+<?php
+
+fscanf(STDIN, "%d", $N);
+$array=[];
+for ($i = 0; $i < $N; $i++)
+{
+    fscanf(STDIN, "%d", $pi);
+    error_log(var_export($pi, true));
+    $array[]=$pi;
+}
+// $newArray=[];
+$plusPetitEcart = 100;
+
+    // error_log(var_export($array, true));
+
+for ($i = 0; $i < $N-1; $i++)
+{
+    $minValue1 = min($array);
+    // error_log(var_export($minValue1, true));
+
+    $keyMin1 = array_search($minValue1, $array);
+
+    unset($array[$keyMin1]);
+    // error_log(var_export($keyMin1, true));
+    
+
+    $minValue2 = min($array);
+    error_log(var_export($minValue2, true));
+    // error_log(var_export($keyMin2, true));
+
+    if (($minValue2 - $minValue1) < $plusPetitEcart){
+        $plusPetitEcart = $minValue2 - $minValue1;
+    }
+}
+
+echo("$plusPetitEcart\n");
+
+?>

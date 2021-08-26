@@ -1,0 +1,32 @@
+<?php
+// $n: the number of temperatures to analyse
+fscanf(STDIN, "%d", $n);
+$inputs = explode(" ", fgets(STDIN));
+
+$arrayTemperature = [];
+for ($i = 0; $i < $n; $i++)
+{   
+    $t = intval($inputs[$i]); // a temperature expressed as an integer ranging from -273 to 5526
+    $arrayTemperature[]=$t;
+}
+
+if (empty($arrayTemperature)){
+    $min = 0;
+} else {
+    $min = $arrayTemperature[0];
+    for ($i = 1; $i < $n; $i++){
+
+        if(abs($arrayTemperature[$i]) == abs($min)){
+            if($arrayTemperature[$i] > $min){
+                $min = $arrayTemperature[$i] ;
+            }
+        }
+
+        if (abs($arrayTemperature[$i]) < abs($min)){
+            $min = $arrayTemperature[$i];
+        }
+    }
+}
+
+echo("$min\n");
+?>

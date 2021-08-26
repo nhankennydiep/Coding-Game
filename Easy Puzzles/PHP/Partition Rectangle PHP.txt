@@ -1,0 +1,50 @@
+<?php
+fscanf(STDIN, "%d %d %d %d", $w, $h, $countX, $countY);
+
+
+// Liste des mesures sur la longueur
+$inputsX = explode(" ", fgets(STDIN));
+$inputsX[] = $w;
+for ($i = 0; $i < $countX; $i++)
+{
+    for ($j = $i; $j < ($countX); $j++){
+        
+        $x = intval($inputsX[$i]);
+
+        $xSup = intval($inputsX[$j+1]);
+
+        $inputsX[] = $xSup - $x;
+    }
+}
+
+
+// Liste des mesures sur la hauteur
+$inputsY = explode(" ", fgets(STDIN));
+$inputsY[] = $h;
+
+for ($i = 0; $i < $countY; $i++)
+{
+    for ($j = $i; $j < ($countY); $j++){
+        
+        $y = intval($inputsY[$i]);
+
+        $ySup = intval($inputsY[$j+1]);
+
+        $inputsY[] = $ySup - $y;
+    }
+}
+
+
+$nbCarre = 0;
+for ($i = 0; $i < count($inputsX); $i++){
+    
+    for($j = 0; $j < count($inputsY); $j++){
+
+        if ($inputsX[$i] == $inputsY[$j]){
+            $nbCarre += 1 ;
+        }
+    }
+}
+
+echo("$nbCarre\n");
+?>
