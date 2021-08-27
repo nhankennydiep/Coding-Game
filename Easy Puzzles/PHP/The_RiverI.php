@@ -39,22 +39,20 @@ echo ("$r1\n");
 
 
 
-// function iterate($r) {
-//     $nombres = strval($r);
-//     $nombres = str_split($r, 1);
-//     return $r + array_sum($nombres);
-// }
+// Autre solution
+fscanf(STDIN, "%d", $r1);
+fscanf(STDIN, "%d", $r2);
 
-// fscanf(STDIN, "%d", $r1);
-// fscanf(STDIN, "%d", $r2);
+function flow(&$r)
+{
+    $r += array_sum(str_split($r));
+}
 
-// while ($r1 != $r2) {
-//     if ($r1 < $r2) {
-//         $r1 = iterate($r1);
-//     }
-//     else {
-//         $r2 = iterate($r2);
-//     }
-// }
+while ($r1 != $r2) {
+    if ($r1 < $r2)
+        flow($r1);
+    else
+        flow($r2);
+}
 
-// echo("$r1\n");
+echo $r1;
